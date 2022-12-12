@@ -42,7 +42,7 @@ class Vimeo {
             const res = await fetch(url);
             const data = await res.text();
             const json = JSON.parse(
-                data.split('<script> (function(document, player) { var config = ')[1].split(';')[0]
+                data.split('window.playerConfig = ')[1].split(';')[0]
             );
 
             const obj = {
